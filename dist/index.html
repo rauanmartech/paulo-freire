@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F25F29">
+  <meta name="description" content="Pratique as 45 questões de Matemática do ENEM 2025, caderno 5 amarelo, com gabarito e acompanhamento de acertos.">
+  <title>Matemática ENEM 2025 | Cursinho Popular Paulo Freire</title>
+  <link rel="icon" type="image/png" href="logo-fundo-transparente.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#questao">Ir para a questão</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="logo-fundo-transparente.png" alt="Logo do Cursinho Popular Paulo Freire" width="64" height="64">
+        <div><strong>Cursinho Popular<br>Paulo Freire</strong><span>Estude no seu ritmo</span></div>
+      </div>
+      <div class="header-tag">Plataforma de questões <span aria-hidden="true">✦</span> Matemática</div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> ENEM 2025 · 2º dia · Caderno 5 amarelo</div>
+        <h1 id="intro-title">Matemática,<br><em>uma questão de cada vez.</em></h1>
+        <p>Leia o enunciado original, escolha uma alternativa e abra o gabarito para conferir seu resultado. Seu progresso fica salvo neste navegador.</p>
+      </div>
+      <div class="intro-art" aria-hidden="true"><span>∑</span><i class="orbit orbit-one"></i><i class="orbit orbit-two"></i><b>45</b><small>questões</small></div>
+    </section>
+
+    <section class="stats" aria-label="Seu progresso">
+      <div class="stat"><span>Questões</span><strong>45</strong><small>136 a 180</small></div>
+      <div class="stat"><span>Conferidas</span><strong id="stat-checked">0</strong><small>de 44 válidas</small></div>
+      <div class="stat"><span>Acertos</span><strong id="stat-correct">0</strong><small id="stat-rate">0% de aproveitamento</small></div>
+      <div class="stat stat-annulled"><span>Anuladas</span><strong>1</strong><small>questão 178</small></div>
+    </section>
+    <div class="progress-track" role="progressbar" aria-label="Questões conferidas" aria-valuemin="0" aria-valuemax="44" aria-valuenow="0"><span id="progress-fill"></span></div>
+
+    <div class="workspace">
+      <aside class="navigator" aria-labelledby="navigator-title">
+        <div class="navigator-heading"><div><span class="section-kicker">NAVEGAÇÃO</span><h2 id="navigator-title">Questões</h2></div><span class="nav-total">45 no total</span></div>
+        <label class="search-label" for="search">Buscar número ou palavra</label>
+        <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Ex.: 154 ou geometria" autocomplete="off"></div>
+        <div class="filters" role="group" aria-label="Filtrar questões">
+          <button type="button" data-filter="all" class="active">Todas</button>
+          <button type="button" data-filter="pending">Pendentes</button>
+          <button type="button" data-filter="correct">Acertos</button>
+          <button type="button" data-filter="wrong">Erros</button>
+          <button type="button" data-filter="annulled">Anulada</button>
+        </div>
+        <div id="question-grid" class="question-grid" aria-label="Lista de questões"></div>
+        <p class="legend"><span class="legend-dot correct"></span> Acerto <span class="legend-dot wrong"></span> Erro <span class="legend-dot annulled"></span> Anulada</p>
+        <button id="reset-progress" type="button" class="reset-button">Recomeçar meu progresso</button>
+      </aside>
+
+      <section class="question-panel" id="questao" aria-labelledby="question-title">
+        <div class="panel-topline"><span id="question-count">QUESTÃO 1 DE 45</span><span id="question-page">Página 16 do caderno</span></div>
+        <div class="question-heading"><div><span class="section-kicker">MATEMÁTICA E SUAS TECNOLOGIAS</span><h2 id="question-title">Questão 136</h2></div><span id="status-badge" class="status-badge">Não respondida</span></div>
+        <p class="question-instruction">Leia a questão e marque a letra da alternativa que você escolheria.</p>
+        <div class="exam-sheet"><img id="question-image" src="questoes/136.webp" alt="Enunciado e alternativas da questão 136 do ENEM 2025"></div>
+        <div class="answer-area">
+          <div class="answer-head"><div><span class="section-kicker">SUA RESPOSTA</span><h3>Qual alternativa você escolhe?</h3></div><span>Selecione uma letra</span></div>
+          <div id="choices" class="choices" role="group" aria-label="Alternativas A a E"></div>
+          <div class="answer-actions"><button id="reveal-button" type="button" class="primary-button" disabled>Ver gabarito <span aria-hidden="true">↗</span></button><button id="retry-button" type="button" class="text-button" hidden>Tentar novamente</button></div>
+          <div id="feedback" class="feedback" aria-live="polite" hidden></div>
+        </div>
+        <div class="question-footer"><button id="prev-button" type="button" class="outline-button">← Anterior</button><button id="next-button" type="button" class="outline-button">Próxima →</button></div>
+      </section>
+    </div>
+    <footer class="site-footer"><span>Questões e gabarito: ENEM 2025, 2º dia, caderno 5 (amarelo).</span><span>Correção comentada em uma próxima etapa.</span></footer>
+  </main>
+  <div id="image-modal" class="image-modal" hidden><button id="close-modal" type="button" aria-label="Fechar imagem ampliada">×</button><img id="modal-image" alt="Questão ampliada"></div>
+  <script src="questoes-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

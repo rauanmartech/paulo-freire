@@ -30,6 +30,16 @@ python -m http.server 8765 --directory dist
 
 Depois abra `http://localhost:8765/`.
 
+## Publicar na Vercel
+
+Este projeto não precisa de instalação nem de build. O `vercel.json` define o framework como **Other** e publica o conteúdo de `dist` na raiz do endereço, sem passar pelo redirecionamento do `index.html` local.
+
+1. Na Vercel, importe o repositório `rauanmartech/paulo-freire` do GitHub.
+2. Mantenha a **Root Directory** na raiz do repositório. Use **Framework Preset: Other**, sem comando de build, e **Output Directory: dist** (já definidos em `vercel.json`). Não são necessárias variáveis de ambiente.
+3. Clique em **Deploy**. Depois da conexão com o GitHub, novos commits em `main` poderão gerar novas publicações automaticamente.
+
+O `index.html` da raiz continua disponível para abrir a plataforma por duplo clique no computador.
+
 ## Atualizar os recortes
 
 O script `scripts/extrair_questoes.py` lê os dois PDFs na pasta acima do projeto, recorta as 45 questões e gera `dist/questoes-data.js` e `dist/questoes.json`. Requer `PyMuPDF` e `Pillow`.

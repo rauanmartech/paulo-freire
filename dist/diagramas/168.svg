@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" role="img" aria-labelledby="title description">
+  <title id="title">A região de ouro da medalha</title>
+  <desc id="description">Vista superior da medalha: círculo amarelo de diâmetro 6 centímetros menos quadrado cinza de diagonal 6 centímetros. Cem medalhas com 3 milímetros de espessura cada formam 30 centímetros de altura total.</desc>
+  <defs>
+    <marker id="arrow168" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4 L0 8 Z" fill="#176DA8"/></marker>
+  </defs>
+  <rect width="800" height="440" fill="#FBFCFB"/>
+  <text x="30" y="42" fill="#24383A" font-family="Arial, sans-serif" font-size="24" font-weight="700">O ouro é a parte amarela</text>
+  <text x="30" y="68" fill="#687679" font-family="Arial, sans-serif" font-size="15">Vista de cima: subtraia o quadrado central do círculo inteiro.</text>
+  <circle cx="230" cy="245" r="130" fill="#FFBE3D" stroke="#D88920" stroke-width="3"/>
+  <path d="M230 115 L360 245 L230 375 L100 245 Z" fill="#7B8E9B" stroke="#40596A" stroke-width="3"/>
+  <path d="M230 115 V375" stroke="#EAF4F2" stroke-width="3" stroke-dasharray="7 6"/>
+  <text x="242" y="234" fill="#fff" font-family="Arial, sans-serif" font-size="17" font-weight="700">diagonal</text>
+  <text x="242" y="256" fill="#fff" font-family="Arial, sans-serif" font-size="17" font-weight="700">6 cm</text>
+  <path d="M67 119 V371" stroke="#176DA8" stroke-width="2" marker-start="url(#arrow168)" marker-end="url(#arrow168)"/>
+  <text x="30" y="250" fill="#176DA8" font-family="Arial, sans-serif" font-size="16" font-weight="700">6 cm</text>
+  <text x="146" y="414" fill="#A75C09" font-family="Arial, sans-serif" font-size="17" font-weight="700">círculo − quadrado</text>
+  <path d="M417 112 V390" stroke="#D9E7E3" stroke-width="2"/>
+  <text x="449" y="140" fill="#24383A" font-family="Arial, sans-serif" font-size="20" font-weight="700">Espessura total</text>
+  <rect x="451" y="168" width="304" height="68" rx="10" fill="#EAF4F2"/>
+  <text x="472" y="198" fill="#155F60" font-family="Arial, sans-serif" font-size="18" font-weight="700">100 medalhas × 3 mm</text>
+  <text x="472" y="224" fill="#155F60" font-family="Arial, sans-serif" font-size="18" font-weight="700">= 300 mm = 30 cm</text>
+  <text x="449" y="288" fill="#24383A" font-family="Arial, sans-serif" font-size="19" font-weight="700">Para achar o volume:</text>
+  <text x="449" y="322" fill="#A75C09" font-family="Arial, sans-serif" font-size="18" font-weight="700">área amarela × 30 cm</text>
+  <text x="449" y="358" fill="#51666A" font-family="Arial, sans-serif" font-size="15">O centro cinza não é cunhado em ouro.</text>
+</svg>

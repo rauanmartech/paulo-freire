@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 1020" role="img" aria-labelledby="title description">
+  <title id="title">Rotas e triângulo da questão 156</title>
+  <desc id="description">No primeiro quadro, a rota planejada vai de P a Q e a R, enquanto a executada vai de P a S e a T. Os trechos ST e QR são paralelos, iguais e seguem para leste. Ao deslocar TR para a esquerda, ele coincide com SQ. No segundo quadro, PSQ é um triângulo isósceles com lados PS e PQ de quatro horas e ângulo P de 130 graus. A rota final mede cerca de sete horas e quinze minutos e tem direção de 135 graus.</desc>
+  <defs>
+    <marker id="arrow-orange" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4.5 L0 9 Z" fill="#F06423"/></marker>
+    <marker id="arrow-green" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4.5 L0 9 Z" fill="#18A558"/></marker>
+  </defs>
+  <style>@media (prefers-reduced-motion: reduce) { .moving-route { display: none; } }</style>
+  <rect x="1" y="1" width="858" height="1018" rx="18" fill="#FBFCFB" stroke="#D9E7E3" stroke-width="2"/>
+  <text x="30" y="39" fill="#24383A" font-family="Arial, sans-serif" font-size="24" font-weight="700">Da rota desenhada ao triângulo que resolve</text>
+  <text x="30" y="66" fill="#627477" font-family="Arial, sans-serif" font-size="15">Como a velocidade é constante, os comprimentos podem ser medidos em horas de navegação.</text>
+
+  <rect x="23" y="91" width="814" height="397" rx="14" fill="#F7FBFA" stroke="#D6E6E2" stroke-width="2"/>
+  <text x="42" y="124" fill="#173B3E" font-family="Arial, sans-serif" font-size="21" font-weight="700">1. Deslize a rota pontilhada para formar PSQ</text>
+  <text x="42" y="149" fill="#627477" font-family="Arial, sans-serif" font-size="14">Os dois trechos horizontais medem 2 h e apontam para leste.</text>
+
+  <polygon points="215,178 295,178 500,385 420,385" fill="#E6F1FC" stroke="#C5DDF3" stroke-width="2"/>
+  <path d="M270 330 L215 178" fill="none" stroke="#18A558" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+  <path d="M215 178 H295" fill="none" stroke="#18A558" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+  <path d="M270 330 L420 385" fill="none" stroke="#F06423" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
+  <path d="M420 385 H500" fill="none" stroke="#F06423" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
+  <path d="M295 178 L500 385" fill="none" stroke="#94BCDD" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="7 7"/>
+  <path d="M215 178 L420 385" fill="none" stroke="#94BCDD" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="7 7"/>
+  <path d="M295 163 H218 M500 405 H423" fill="none" stroke="#77939B" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M228 157 L218 163 L228 169 M433 399 L423 405 L433 411" fill="none" stroke="#77939B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="moving-route">
+    <path d="M295 178 L500 385" fill="none" stroke="#147BDE" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="8 7"/>
+    <circle cx="295" cy="178" r="4.5" fill="#147BDE"/>
+    <circle cx="500" cy="385" r="4.5" fill="#147BDE"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 0;-80 0;-80 0;0 0" keyTimes="0;0.18;0.52;0.78;1" dur="6s" repeatCount="indefinite"/>
+  </g>
+  <g fill="#FFFFFF" stroke="#173B3E" stroke-width="2.5">
+    <circle cx="270" cy="330" r="6"/><circle cx="215" cy="178" r="6"/><circle cx="295" cy="178" r="6"/>
+    <circle cx="420" cy="385" r="6"/><circle cx="500" cy="385" r="6"/>
+  </g>
+  <g fill="#173B3E" font-family="Arial, sans-serif" font-size="17" font-weight="700">
+    <text x="252" y="354">P</text><text x="198" y="194">S</text><text x="297" y="198">T</text>
+    <text x="408" y="411">Q</text><text x="505" y="411">R</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="15" font-weight="700" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">
+    <text x="132" y="261" fill="#12824A">PS = 4 h</text>
+    <text x="301" y="411" fill="#BE4E1D">PQ = 4 h</text>
+    <text x="225" y="220" fill="#12824A">ST = 2 h</text>
+    <text x="429" y="370" fill="#BE4E1D">QR = 2 h</text>
+  </g>
+  <rect x="545" y="174" width="264" height="258" rx="12" fill="#FFFFFF" stroke="#C9DBE4" stroke-width="2"/>
+  <text x="563" y="202" fill="#173B3E" font-family="Arial, sans-serif" font-size="17" font-weight="700">Medidas no desenho</text>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <text x="563" y="233" fill="#12824A">PS = 4 h · 340°</text>
+    <text x="563" y="260" fill="#BE4E1D">PQ = 4 h · 110°</text>
+    <text x="563" y="287" fill="#12824A">ST = 2 h · 90°</text>
+    <text x="563" y="314" fill="#BE4E1D">QR = 2 h · 90°</text>
+    <text x="563" y="343" fill="#147BDE">SQ = TR = d</text>
+  </g>
+  <path d="M563 358 H790" stroke="#D7E5E9" stroke-width="1.5"/>
+  <text x="563" y="383" fill="#355F68" font-family="Arial, sans-serif" font-size="14">ST e QR são iguais e paralelos.</text>
+  <text x="563" y="407" fill="#355F68" font-family="Arial, sans-serif" font-size="14">A linha azul desliza de TR a SQ.</text>
+  <text x="42" y="460" fill="#627477" font-family="Arial, sans-serif" font-size="14">A rota procurada T → R tem a mesma duração e a mesma direção que S → Q.</text>
+
+  <rect x="23" y="505" width="814" height="480" rx="14" fill="#FFFFFF" stroke="#D6E6E2" stroke-width="2"/>
+  <text x="42" y="540" fill="#173B3E" font-family="Arial, sans-serif" font-size="21" font-weight="700">2. Resolva o triângulo isósceles PSQ</text>
+  <text x="42" y="565" fill="#627477" font-family="Arial, sans-serif" font-size="14">Os dois primeiros percursos duram 4 h, então PS = PQ.</text>
+
+  <polygon points="300,780 245,628 450,835" fill="#EFF7FC" stroke="#D3E8F6" stroke-width="2"/>
+  <path d="M300 780 L245 628" fill="none" stroke="#18A558" stroke-width="3" stroke-linecap="round"/>
+  <path d="M300 780 L450 835" fill="none" stroke="#F06423" stroke-width="3" stroke-linecap="round"/>
+  <path d="M245 628 L450 835" fill="none" stroke="#147BDE" stroke-width="3" stroke-linecap="round"/>
+  <path d="M285 739 A44 44 0 0 1 341 795" fill="none" stroke="#7B6986" stroke-width="2.5"/>
+  <g fill="#FFFFFF" stroke="#173B3E" stroke-width="2.5"><circle cx="300" cy="780" r="6"/><circle cx="245" cy="628" r="6"/><circle cx="450" cy="835" r="6"/></g>
+  <g fill="#173B3E" font-family="Arial, sans-serif" font-size="17" font-weight="700"><text x="286" y="807">P</text><text x="221" y="622">S</text><text x="456" y="856">Q</text></g>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">
+    <text x="194" y="715" fill="#12824A">PS = 4 h</text>
+    <text x="328" y="858" fill="#BE4E1D">PQ = 4 h</text>
+    <text x="365" y="713" fill="#147BDE">SQ = TR = d</text>
+  </g>
+  <text x="314" y="751" fill="#675675" font-family="Arial, sans-serif" font-size="17" font-weight="700">130°</text>
+  <text x="278" y="659" fill="#675675" font-family="Arial, sans-serif" font-size="15" font-weight="700">25°</text>
+  <text x="406" y="804" fill="#675675" font-family="Arial, sans-serif" font-size="15" font-weight="700">25°</text>
+
+  <rect x="512" y="580" width="302" height="389" rx="12" fill="#FFFFFF" stroke="#C9DBE4" stroke-width="2"/>
+  <text x="530" y="608" fill="#173B3E" font-family="Arial, sans-serif" font-size="17" font-weight="700">Medidas no triângulo</text>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <text x="530" y="634" fill="#12824A">PS = 4 h</text>
+    <text x="530" y="658" fill="#BE4E1D">PQ = 4 h</text>
+    <text x="530" y="682" fill="#147BDE">SQ = TR = d</text>
+  </g>
+  <path d="M530 696 H795" stroke="#D7E5E9" stroke-width="1.5"/>
+  <text x="530" y="721" fill="#9C4319" font-family="Arial, sans-serif" font-size="17" font-weight="700">Tempo: lei dos cossenos</text>
+  <text x="530" y="745" fill="#354D50" font-family="Arial, sans-serif" font-size="15">340° → 0° → 110°: 130°</text>
+  <text x="530" y="768" fill="#354D50" font-family="Arial, sans-serif" font-size="15">cos 130° = −cos 50° = −0,64</text>
+  <text x="530" y="791" fill="#354D50" font-family="Arial, sans-serif" font-size="15">d² = 4² + 4² − 2 · 4 · 4 · cos 130°</text>
+  <text x="530" y="814" fill="#354D50" font-family="Arial, sans-serif" font-size="15">d² = 52,48 → d ≈ 7,244 h</text>
+  <text x="530" y="837" fill="#9C4319" font-family="Arial, sans-serif" font-size="16" font-weight="700">d ≈ 7 h 15 min</text>
+  <path d="M530 848 H795" stroke="#D7E5E9" stroke-width="1.5"/>
+  <text x="530" y="871" fill="#9C4319" font-family="Arial, sans-serif" font-size="17" font-weight="700">Direção: ângulos da base</text>
+  <text x="530" y="894" fill="#354D50" font-family="Arial, sans-serif" font-size="15">(180° − 130°) ÷ 2 = 25°</text>
+  <text x="530" y="917" fill="#354D50" font-family="Arial, sans-serif" font-size="15">S → P: 340° + 180° = 160°</text>
+  <text x="530" y="943" fill="#147BDE" font-family="Arial, sans-serif" font-size="16" font-weight="700">S → Q e T → R: 160° − 25° = 135°</text>
+  <text x="30" y="1007" fill="#627477" font-family="Arial, sans-serif" font-size="13">Medidas em “horas de navegação” porque a velocidade é a mesma em todos os trechos.</text>
+</svg>

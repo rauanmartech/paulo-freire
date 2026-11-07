@@ -1,0 +1,27 @@
+.step-content .fraction-equation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 8px;
+}
+.fraction-stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.fraction-numerator {
+  display: block;
+  padding: 0 5px 5px;
+  border-bottom: 2px solid currentColor;
+}
+.fraction-denominator { display: block; padding-top: 5px; }
+.fraction-tail { white-space: nowrap; }
+@media (max-width: 430px) {
+  .step-content .fraction-equation { gap: 6px; padding: 9px 10px; }
+  .fraction-numerator { padding-left: 2px; padding-right: 2px; }
+}

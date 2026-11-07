@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 490" role="img" aria-labelledby="title description">
+  <title id="title">Gráfico da função T = 1,59 × F</title>
+  <desc id="description">Eixo horizontal F, cortisol na folga; eixo vertical T, cortisol no trabalho. Uma reta laranja crescente passa pela origem e pelos pontos ilustrativos (1; 1,59) e (2; 3,18).</desc>
+  <rect width="800" height="490" fill="#FBFCFB"/>
+  <text x="32" y="42" fill="#24383A" font-family="Arial, sans-serif" font-size="24" font-weight="700">Como desenhar T = 1,59 × F</text>
+  <text x="32" y="67" fill="#687679" font-family="Arial, sans-serif" font-size="15">Escolha valores de F, calcule T e marque os pontos. Os valores abaixo são ilustrativos.</text>
+  <g stroke="#D9E7E3" stroke-width="1.5">
+    <path d="M120 355 H690 M120 290 H690 M120 225 H690 M120 160 H690 M120 95 H690"/>
+    <path d="M250 95 V420 M380 95 V420 M510 95 V420 M640 95 V420"/>
+  </g>
+  <g stroke="#176DA8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M120 82 V420 H710"/>
+    <path d="M114 94 L120 82 L126 94 M698 414 L710 420 L698 426"/>
+  </g>
+  <g fill="#51666A" font-family="Arial, sans-serif" font-size="15" text-anchor="middle">
+    <text x="120" y="444">0</text><text x="250" y="444">1</text><text x="380" y="444">2</text><text x="510" y="444">3</text><text x="640" y="444">4</text>
+  </g>
+  <g fill="#51666A" font-family="Arial, sans-serif" font-size="15" text-anchor="end">
+    <text x="106" y="360">1</text><text x="106" y="295">2</text><text x="106" y="230">3</text><text x="106" y="165">4</text><text x="106" y="100">5</text>
+  </g>
+  <path d="M120 420 L510 109.85" stroke="#F06423" stroke-width="5" stroke-linecap="round"/>
+  <g stroke="#F06423" stroke-width="2" stroke-dasharray="5 6" fill="none">
+    <path d="M250 316.65 V420 M120 316.65 H250 M380 213.3 V420 M120 213.3 H380"/>
+  </g>
+  <g fill="#F06423" stroke="#FFF" stroke-width="3">
+    <circle cx="120" cy="420" r="7"/><circle cx="250" cy="316.65" r="8"/><circle cx="380" cy="213.3" r="8"/>
+  </g>
+  <g fill="#A84A22" font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <text x="265" y="312">(1; 1,59)</text><text x="395" y="208">(2; 3,18)</text>
+  </g>
+  <text x="556" y="138" fill="#A84A22" font-family="Arial, sans-serif" font-size="19" font-weight="700">T = 1,59 × F</text>
+  <text x="720" y="425" fill="#176DA8" font-family="Arial, sans-serif" font-size="18" font-weight="700">F</text>
+  <text x="70" y="88" fill="#176DA8" font-family="Arial, sans-serif" font-size="18" font-weight="700">T</text>
+  <text x="316" y="477" fill="#51666A" font-family="Arial, sans-serif" font-size="14">F: cortisol no dia de folga</text>
+  <text x="548" y="477" fill="#51666A" font-family="Arial, sans-serif" font-size="14">T: cortisol no dia de trabalho</text>
+</svg>

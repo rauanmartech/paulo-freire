@@ -1,0 +1,20 @@
+.street-stage { background: #fbfcfb; border-bottom: 1px solid var(--line); }
+.street-stage svg { display: block; width: 100%; height: auto; }
+.street-readout { padding: 14px 17px; background: #f7fbfa; border-bottom: 1px solid var(--line); }
+.street-counter { display: block; color: var(--orange); font-size: 10px; font-weight: 900; letter-spacing: .12em; }
+.street-message { margin: 4px 0 0; color: var(--ink); font-size: 13px; font-weight: 700; line-height: 1.5; }
+.street-controls { display: flex; flex-wrap: wrap; gap: 8px; padding: 13px 14px; }
+.street-control {
+  border: 1px solid #c9dad6; border-radius: 8px; background: #fff;
+  color: var(--blue); padding: 9px 11px; font-size: 11px; font-weight: 800;
+}
+.street-control:hover:not(:disabled) { border-color: var(--blue); background: #f0f8f5; }
+.street-control:disabled { opacity: .4; }
+.street-play { background: var(--orange); border-color: var(--orange); color: #fff; }
+.street-play:hover:not(:disabled) { background: #d84f20; color: #fff; }
+.street-interactive figcaption { background: #fff; }
+@media (max-width: 600px) {
+  .street-controls { display: grid; grid-template-columns: 1fr 1fr; }
+  .street-control { padding: 8px 6px; font-size: 10px; }
+  .street-message { font-size: 12px; }
+}

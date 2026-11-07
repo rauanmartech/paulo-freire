@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" role="img" aria-labelledby="title desc">
+  <title id="title">Folgas necessárias na caixa da maior torta</title>
+  <desc id="desc">Na vista superior, a maior torta circular de diâmetro 32 centímetros fica em uma caixa quadrada com um centímetro de espaço livre de cada lado: lado de 34 centímetros. Na vista lateral, a torta cilíndrica tem 6 centímetros de altura e há um centímetro livre até a tampa: altura da caixa 7 centímetros.</desc>
+  <rect width="800" height="430" fill="#FBFCFB"/>
+  <text x="30" y="42" fill="#24383A" font-family="Arial, sans-serif" font-size="23" font-weight="700">Como a torta maior cabe na caixa</text>
+  <text x="30" y="68" fill="#687679" font-family="Arial, sans-serif" font-size="15">A folga lateral aparece duas vezes; a folga superior, uma vez.</text>
+  <text x="75" y="112" fill="#176DA8" font-family="Arial, sans-serif" font-size="18" font-weight="700">Vista de cima</text>
+  <rect x="78" y="129" width="238" height="238" fill="#EAF4F2" stroke="#176DA8" stroke-width="3"/>
+  <circle cx="197" cy="248" r="111" fill="#F6BF84" stroke="#A86738" stroke-width="3"/>
+  <path d="M86 248 H308" stroke="#A84A22" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="141" y="242" fill="#8E3A18" font-family="Arial, sans-serif" font-size="18" font-weight="700">32 cm</text>
+  <text x="88" y="152" fill="#176DA8" font-family="Arial, sans-serif" font-size="12" font-weight="700">1 cm</text>
+  <text x="284" y="152" fill="#176DA8" font-family="Arial, sans-serif" font-size="12" font-weight="700">1 cm</text>
+  <text x="82" y="399" fill="#155F60" font-family="Arial, sans-serif" font-size="20" font-weight="700">lado = 1 + 32 + 1 = 34 cm</text>
+  <path d="M394 111 V408" stroke="#D9E7E3" stroke-width="2"/>
+  <text x="434" y="112" fill="#176DA8" font-family="Arial, sans-serif" font-size="18" font-weight="700">Vista lateral</text>
+  <rect x="435" y="129" width="291" height="238" fill="#EAF4F2" stroke="#176DA8" stroke-width="3"/>
+  <path d="M447 169 V355 C447 373 714 373 714 355 V169 Z" fill="#E9A96C" stroke="#A86738" stroke-width="2.5"/>
+  <ellipse cx="580.5" cy="169" rx="133.5" ry="25" fill="#F6CD9A" stroke="#A86738" stroke-width="2.5"/>
+  <path d="M738 129 V144" stroke="#176DA8" stroke-width="2"/>
+  <path d="M735 132 L738 129 L741 132 M735 141 L738 144 L741 141" fill="none" stroke="#176DA8" stroke-width="1.5"/>
+  <text x="747" y="143" fill="#176DA8" font-family="Arial, sans-serif" font-size="14" font-weight="700">1 cm</text>
+  <text x="605" y="268" fill="#8E3A18" font-family="Arial, sans-serif" font-size="18" font-weight="700">6 cm de torta</text>
+  <text x="444" y="399" fill="#155F60" font-family="Arial, sans-serif" font-size="20" font-weight="700">altura = 6 + 1 = 7 cm</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 490" role="img" aria-labelledby="title description">
+  <title id="title">Cilindro inteiro e prisma central da questão 168</title>
+  <desc id="description">Esquema em perspectiva sem escala. O cilindro de área da base 27,9 centímetros quadrados e altura 30 centímetros tem volume 837 centímetros cúbicos. O prisma quadrangular central de área da base 18 centímetros quadrados e altura 30 centímetros tem volume 540 centímetros cúbicos. O volume de ouro é a diferença entre eles.</desc>
+  <defs>
+    <marker id="arrow-solids" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4 L0 8 Z" fill="#176DA8"/></marker>
+  </defs>
+  <rect width="800" height="490" fill="#FBFCFB"/>
+  <text x="28" y="40" fill="#24383A" font-family="Arial, sans-serif" font-size="24" font-weight="700">Dois volumes com a mesma altura</text>
+  <text x="28" y="65" fill="#687679" font-family="Arial, sans-serif" font-size="15">Esquema sem escala: 100 espessuras de 0,3 cm formam 30 cm.</text>
+  <path d="M400 91 V462" stroke="#D9E7E3" stroke-width="2"/>
+  <text x="82" y="108" fill="#A75C09" font-family="Arial, sans-serif" font-size="20" font-weight="700">Cilindro inteiro</text>
+  <text x="492" y="108" fill="#40596A" font-family="Arial, sans-serif" font-size="20" font-weight="700">Prisma central</text>
+
+  <path d="M105 160 V329 C105 373 295 373 295 329 V160 Z" fill="#FFBE3D" stroke="#D88920" stroke-width="3"/>
+  <path d="M105 329 C105 373 295 373 295 329" fill="none" stroke="#D88920" stroke-width="3"/>
+  <ellipse cx="200" cy="160" rx="95" ry="32" fill="#FFD578" stroke="#D88920" stroke-width="3"/>
+  <circle cx="200" cy="160" r="4" fill="#176DA8"/>
+  <path d="M200 160 H288" stroke="#176DA8" stroke-width="2" marker-end="url(#arrow-solids)"/>
+  <text x="215" y="150" fill="#155F60" font-family="Arial, sans-serif" font-size="15" font-weight="700">r = 3 cm</text>
+  <path d="M327 162 V329" stroke="#176DA8" stroke-width="2" marker-start="url(#arrow-solids)" marker-end="url(#arrow-solids)"/>
+  <text x="337" y="251" fill="#176DA8" font-family="Arial, sans-serif" font-size="17" font-weight="700">30 cm</text>
+  <text x="92" y="406" fill="#A75C09" font-family="Arial, sans-serif" font-size="17" font-weight="700">base circular: 27,9 cm²</text>
+  <text x="92" y="438" fill="#A75C09" font-family="Arial, sans-serif" font-size="19" font-weight="700">V = 27,9 × 30 = 837 cm³</text>
+
+  <path d="M505 160 L595 195 L595 365 L505 330 Z" fill="#8297A5" stroke="#40596A" stroke-width="3"/>
+  <path d="M595 195 L685 160 L685 330 L595 365 Z" fill="#667F8F" stroke="#40596A" stroke-width="3"/>
+  <path d="M595 125 L685 160 L595 195 L505 160 Z" fill="#A5B4BE" stroke="#40596A" stroke-width="3"/>
+  <path d="M505 160 H685" stroke="#EAF4F2" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="553" y="154" fill="#24383A" font-family="Arial, sans-serif" font-size="15" font-weight="700">d = 6 cm</text>
+  <path d="M716 161 V329" stroke="#176DA8" stroke-width="2" marker-start="url(#arrow-solids)" marker-end="url(#arrow-solids)"/>
+  <text x="727" y="251" fill="#176DA8" font-family="Arial, sans-serif" font-size="17" font-weight="700">30 cm</text>
+  <text x="484" y="406" fill="#40596A" font-family="Arial, sans-serif" font-size="17" font-weight="700">base quadrada: 18 cm²</text>
+  <text x="484" y="438" fill="#40596A" font-family="Arial, sans-serif" font-size="19" font-weight="700">V = 18 × 30 = 540 cm³</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 370" role="img" aria-labelledby="title desc">
+  <title id="title">Dois tamanhos de tortas cilíndricas</title>
+  <desc id="desc">Dois cilindros ilustrativos de mesma altura, 6 centímetros. O menor tem raio de 12 centímetros e diâmetro de 24 centímetros. O maior tem raio de 16 centímetros e diâmetro de 32 centímetros. A caixa deve servir ao cilindro maior.</desc>
+  <rect width="800" height="370" fill="#FBFCFB"/>
+  <text x="30" y="42" fill="#24383A" font-family="Arial, sans-serif" font-size="24" font-weight="700">A caixa precisa servir à maior torta</text>
+  <text x="30" y="68" fill="#687679" font-family="Arial, sans-serif" font-size="15">As duas tortas são cilindros de 6 cm de altura; o que muda é o raio.</text>
+  <path d="M80 174 V252 C80 285 310 285 310 252 V174 Z" fill="#E6A96D" stroke="#A86738" stroke-width="3"/>
+  <path d="M80 252 C80 285 310 285 310 252" fill="none" stroke="#A86738" stroke-width="3"/>
+  <ellipse cx="195" cy="174" rx="115" ry="33" fill="#F6CD9A" stroke="#A86738" stroke-width="3"/>
+  <path d="M195 174 H305" stroke="#176DA8" stroke-width="2.5"/>
+  <circle cx="195" cy="174" r="4" fill="#176DA8"/>
+  <text x="208" y="166" fill="#155F60" font-family="Arial, sans-serif" font-size="16" font-weight="700">r = 12 cm</text>
+  <text x="110" y="314" fill="#24383A" font-family="Arial, sans-serif" font-size="20" font-weight="700">Menor: 24 cm de diâmetro</text>
+  <path d="M439 174 V252 C439 287 721 287 721 252 V174 Z" fill="#F2A260" stroke="#A75A29" stroke-width="3"/>
+  <path d="M439 252 C439 287 721 287 721 252" fill="none" stroke="#A75A29" stroke-width="3"/>
+  <ellipse cx="580" cy="174" rx="141" ry="40" fill="#FFD095" stroke="#A75A29" stroke-width="3"/>
+  <path d="M580 174 H716" stroke="#176DA8" stroke-width="2.5"/>
+  <circle cx="580" cy="174" r="4" fill="#176DA8"/>
+  <text x="590" y="162" fill="#155F60" font-family="Arial, sans-serif" font-size="16" font-weight="700">r = 16 cm</text>
+  <text x="477" y="314" fill="#A84A22" font-family="Arial, sans-serif" font-size="20" font-weight="700">Maior: 32 cm de diâmetro</text>
+  <text x="237" y="353" fill="#687679" font-family="Arial, sans-serif" font-size="14">Cilindros ilustrativos; a diferença decisiva é a largura da base.</text>
+</svg>

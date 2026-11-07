@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" role="img" aria-labelledby="title description">
+  <title id="title">Onde ler os gráficos da questão 172</title>
+  <desc id="description">A velocidade de 60 quilômetros por hora está destacada nos dois gráficos. Nesse ponto, o rendimento do GNV é de 10 quilômetros por metro cúbico e o da gasolina é de 8 quilômetros por litro. As curvas são uma releitura esquemática dos gráficos do enunciado.</desc>
+  <rect width="800" height="430" fill="#FBFCFB"/>
+  <text x="27" y="39" fill="#24383A" font-family="Arial, sans-serif" font-size="23" font-weight="700">Olhe para 60 km/h nos dois gráficos</text>
+  <text x="27" y="64" fill="#687679" font-family="Arial, sans-serif" font-size="15">Siga a linha laranja até a curva e leia o rendimento no eixo vertical.</text>
+  <text x="77" y="106" fill="#176DA8" font-family="Arial, sans-serif" font-size="18" font-weight="700">GNV · km/m³</text>
+  <text x="472" y="106" fill="#176DA8" font-family="Arial, sans-serif" font-size="18" font-weight="700">Gasolina · km/L</text>
+  <path d="M400 91 V407" stroke="#D9E7E3" stroke-width="2"/>
+  <g stroke="#D9E7E3" stroke-width="1.5" stroke-dasharray="3 5">
+    <path d="M75 258 H306 M75 206 H306 M75 180 H306 M75 154 H306 M75 128 H306"/>
+    <path d="M470 258 H701 M470 206 H701 M470 180 H701 M470 154 H701 M470 128 H701"/>
+    <path d="M108 128 V310 M141 128 V310 M207 128 V310 M240 128 V310 M273 128 V310 M306 128 V310"/>
+    <path d="M503 128 V310 M536 128 V310 M602 128 V310 M635 128 V310 M668 128 V310 M701 128 V310"/>
+  </g>
+  <g stroke="#176DA8" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M75 120 V310 H320"/><path d="M470 120 V310 H715"/>
+  </g>
+  <g fill="#51666A" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">
+    <text x="75" y="329">0</text><text x="108" y="329">20</text><text x="174" y="329" fill="#A84A22" font-weight="700">60</text><text x="240" y="329">100</text><text x="306" y="329">140</text>
+    <text x="470" y="329">0</text><text x="503" y="329">20</text><text x="569" y="329" fill="#A84A22" font-weight="700">60</text><text x="635" y="329">100</text><text x="701" y="329">140</text>
+  </g>
+  <g fill="#51666A" font-family="Arial, sans-serif" font-size="13" text-anchor="end">
+    <text x="68" y="263">4</text><text x="68" y="211">8</text><text x="68" y="185">10</text><text x="68" y="159">12</text><text x="68" y="133">14</text>
+    <text x="463" y="263">4</text><text x="463" y="211">8</text><text x="463" y="185">10</text><text x="463" y="159">12</text><text x="463" y="133">14</text>
+  </g>
+  <g fill="#51666A" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">
+    <text x="190" y="353">Velocidade (km/h)</text><text x="585" y="353">Velocidade (km/h)</text>
+  </g>
+  <path d="M108 206 C135 197 150 185 174 180 S222 151 240 154 S281 174 306 180" fill="none" stroke="#18A0D8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M503 232 C530 223 548 213 569 206 S606 165 635 167 S675 190 701 193" fill="none" stroke="#18A0D8" stroke-width="4" stroke-linecap="round"/>
+  <g stroke="#F06423" stroke-width="2.5" stroke-dasharray="6 5" fill="none">
+    <path d="M174 180 V310 M75 180 H174 M569 206 V310 M470 206 H569"/>
+  </g>
+  <g fill="#F06423" stroke="#fff" stroke-width="3"><circle cx="174" cy="180" r="8"/><circle cx="569" cy="206" r="8"/></g>
+  <g fill="#A84A22" font-family="Arial, sans-serif" font-size="18" font-weight="700">
+    <text x="91" y="389">60 km/h → 10 km/m³</text>
+    <text x="475" y="389">60 km/h → 8 km/L</text>
+  </g>
+  <text x="27" y="417" fill="#687679" font-family="Arial, sans-serif" font-size="12">Curvas redesenhadas apenas para destacar a leitura; consulte os gráficos originais acima.</text>
+</svg>

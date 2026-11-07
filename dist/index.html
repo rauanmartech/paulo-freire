@@ -8,6 +8,10 @@
   <title>Matemática ENEM 2025 | Cursinho Popular Paulo Freire</title>
   <link rel="icon" type="image/png" href="logo-fundo-transparente.png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cupola-viewer.css">
+  <link rel="stylesheet" href="fraction-equations.css">
+  <link rel="stylesheet" href="street-viewer.css">
+  <link rel="stylesheet" href="draw.css">
 </head>
 <body>
   <a class="skip-link" href="#questao">Ir para a questão</a>
@@ -41,9 +45,23 @@
 
     <div class="workspace">
       <aside class="navigator" aria-labelledby="navigator-title">
-        <div class="navigator-heading"><div><span class="section-kicker">NAVEGAÇÃO</span><h2 id="navigator-title">Questões</h2></div><span class="nav-total">45 no total</span></div>
-        <label class="search-label" for="search">Buscar número ou palavra</label>
-        <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Ex.: 154 ou geometria" autocomplete="off"></div>
+        <div class="navigator-heading"><div><span class="section-kicker">NAVEGAÇÃO</span><h2 id="navigator-title">Questões</h2></div><span id="nav-total" class="nav-total">45 no total</span></div>
+        <div class="draw-entry">
+          <button id="draw-button" type="button" class="draw-button" aria-describedby="draw-hint"><span class="draw-button-icon" aria-hidden="true">✦</span> Sortear questão <span aria-hidden="true">→</span></button>
+          <span id="draw-hint">Entre as questões válidas do filtro atual</span>
+        </div>
+        <label class="search-label" for="search">Buscar número, palavra ou tag</label>
+        <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Ex.: 154, geometria ou escala" autocomplete="off"></div>
+        <div class="taxonomy-filters">
+          <label for="area-filter">Área<select id="area-filter"><option value="">Todas as áreas</option></select></label>
+          <fieldset class="difficulty-filter"><legend>Dificuldade</legend><div class="difficulty-options">
+            <button type="button" data-difficulty="" class="active">Todas</button>
+            <button type="button" data-difficulty="facil" class="facil">Fácil</button>
+            <button type="button" data-difficulty="medio" class="medio">Médio</button>
+            <button type="button" data-difficulty="dificil" class="dificil">Difícil</button>
+          </div></fieldset>
+        </div>
+        <button id="clear-taxonomy" type="button" class="clear-taxonomy">Limpar busca e filtros</button>
         <div class="filters" role="group" aria-label="Filtrar questões">
           <button type="button" data-filter="all" class="active">Todas</button>
           <button type="button" data-filter="pending">Pendentes</button>
@@ -59,6 +77,7 @@
       <section class="question-panel" id="questao" aria-labelledby="question-title">
         <div class="panel-topline"><span id="question-count">QUESTÃO 1 DE 45</span><span id="question-page">Página 16 do caderno</span></div>
         <div class="question-heading"><div><span class="section-kicker">MATEMÁTICA E SUAS TECNOLOGIAS</span><h2 id="question-title">Questão 136</h2></div><span id="status-badge" class="status-badge">Não respondida</span></div>
+        <div id="question-meta" class="question-meta" aria-label="Assuntos e dificuldade da questão"></div>
         <p class="question-instruction">Leia a questão e marque a letra da alternativa que você escolheria.</p>
         <div class="exam-sheet"><img id="question-image" src="questoes/136.webp" alt="Enunciado e alternativas da questão 136 do ENEM 2025"></div>
         <div class="answer-area">
@@ -66,14 +85,41 @@
           <div id="choices" class="choices" role="group" aria-label="Alternativas A a E"></div>
           <div class="answer-actions"><button id="reveal-button" type="button" class="primary-button" disabled>Ver gabarito <span aria-hidden="true">↗</span></button><button id="retry-button" type="button" class="text-button" hidden>Tentar novamente</button></div>
           <div id="feedback" class="feedback" aria-live="polite" hidden></div>
+          <section id="resolution" class="resolution" aria-labelledby="resolution-title" hidden></section>
         </div>
         <div class="question-footer"><button id="prev-button" type="button" class="outline-button">← Anterior</button><button id="next-button" type="button" class="outline-button">Próxima →</button></div>
       </section>
     </div>
-    <footer class="site-footer"><span>Questões e gabarito: ENEM 2025, 2º dia, caderno 5 (amarelo).</span><span>Correção comentada em uma próxima etapa.</span></footer>
+    <footer class="site-footer"><span>Questões e gabarito: ENEM 2025, 2º dia, caderno 5 (amarelo).</span><span>Resoluções comentadas adicionadas questão por questão.</span></footer>
   </main>
+  <div id="draw-overlay" class="draw-overlay" role="dialog" aria-modal="true" aria-labelledby="draw-title" aria-describedby="draw-description" hidden>
+    <div class="draw-backdrop-art" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="draw-dialog">
+      <div class="draw-controls">
+        <button id="draw-sound" type="button" class="draw-sound" aria-pressed="true" aria-label="Desligar som do sorteio">Som ligado</button>
+        <button id="draw-close" type="button" class="draw-close" aria-label="Fechar sorteio">×</button>
+      </div>
+      <p class="draw-kicker">UM DESAFIO PARA VOCÊ</p>
+      <h2 id="draw-title">Sorteando sua questão</h2>
+      <p id="draw-description">Acompanhe a revelação: área, dificuldade e questão.</p>
+      <div class="draw-progress" aria-hidden="true"><span id="draw-progress-fill"></span></div>
+      <div class="draw-stages">
+        <div class="draw-stage" data-draw-stage="0"><span class="draw-stage-index">01</span><span class="draw-stage-label">Área</span><strong id="draw-area">?</strong></div>
+        <div class="draw-stage" data-draw-stage="1"><span class="draw-stage-index">02</span><span class="draw-stage-label">Dificuldade</span><strong id="draw-difficulty">?</strong></div>
+        <div class="draw-stage" data-draw-stage="2"><span class="draw-stage-index">03</span><span class="draw-stage-label">Questão</span><strong id="draw-question">?</strong></div>
+      </div>
+      <p id="draw-status" class="draw-status" aria-live="polite">Preparando o sorteio…</p>
+      <button id="draw-open" type="button" class="draw-open" hidden>Ir para a questão <span aria-hidden="true">→</span></button>
+    </div>
+  </div>
   <div id="image-modal" class="image-modal" hidden><button id="close-modal" type="button" aria-label="Fechar imagem ampliada">×</button><img id="modal-image" alt="Questão ampliada"></div>
   <script src="questoes-data.js"></script>
+  <script src="classificacoes-data.js"></script>
+  <script src="resolucoes-data.js"></script>
+  <script src="solid-viewer.js"></script>
+  <script src="grid-viewer.js"></script>
+  <script src="cupola-viewer.js"></script>
+  <script src="street-viewer.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

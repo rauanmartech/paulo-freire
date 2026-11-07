@@ -1,0 +1,38 @@
+.cupola-stage {
+  position: relative;
+  background: radial-gradient(circle at 50% 45%, #fff 24%, #edf5f3 100%);
+  border-bottom: 1px solid var(--line);
+}
+.cupola-stage canvas { display: block; width: 100%; height: auto; cursor: grab; touch-action: none; }
+.cupola-stage canvas:active { cursor: grabbing; }
+.cupola-stage canvas:focus-visible { outline: 3px solid var(--orange); outline-offset: -4px; }
+.cupola-hint {
+  position: absolute; top: 13px; left: 13px; pointer-events: none;
+  background: #ffffffea; color: var(--blue); padding: 8px 10px;
+  border-radius: 100px; font-size: 11px; font-weight: 800;
+}
+.cupola-views { display: flex; flex-wrap: wrap; gap: 8px; padding: 13px 14px 0; }
+.cupola-view-button {
+  border: 1px solid #c9dad6; border-radius: 8px; background: #fff;
+  color: var(--blue); padding: 9px 11px; font-size: 11px; font-weight: 800;
+}
+.cupola-view-button:hover { border-color: var(--blue); background: #f0f8f5; }
+.cupola-groups { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; padding: 13px 14px; }
+.cupola-group {
+  display: flex; align-items: center; gap: 8px; min-width: 0; text-align: left;
+  border: 1px solid var(--line); border-radius: 9px; background: #fff;
+  padding: 9px; cursor: pointer;
+}
+.cupola-group:hover { background: #f7fbfa; border-color: var(--blue); }
+.cupola-group[aria-pressed="true"] { border-color: var(--orange); outline: 2px solid var(--orange); outline-offset: 1px; background: #fff7f1; }
+.cupola-swatch { width: 16px; height: 16px; flex: none; border-radius: 50%; border: 1px solid #264e52; }
+.cupola-group strong, .cupola-group small { display: block; }
+.cupola-group strong { font-size: 11px; color: var(--ink); line-height: 1.25; }
+.cupola-group small { font-size: 10px; color: var(--muted); margin-top: 2px; }
+.cupola-readout { margin: 0; padding: 0 15px 14px; color: var(--blue); font-size: 12px; font-weight: 800; line-height: 1.5; }
+.cupola-interactive figcaption { background: #fff; }
+@media (max-width: 600px) {
+  .cupola-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cupola-view-button { flex: 1; }
+  .cupola-hint { top: 7px; left: 7px; padding: 5px 7px; font-size: 9px; }
+}

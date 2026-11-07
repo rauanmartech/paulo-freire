@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 560" role="img" aria-labelledby="title description">
+  <title id="title">Peça hexagonal pintada com quatro cores</title>
+  <desc id="description">Um prisma hexagonal reto sustenta um tronco de pirâmide hexagonal reta. Seus seis retângulos laterais são verdes; os seis trapézios laterais são vermelhos; o hexágono superior pequeno é amarelo; o hexágono inferior grande, mostrado em uma vista por baixo, é azul.</desc>
+  <rect x="1" y="1" width="918" height="558" rx="18" fill="#FBFCFB" stroke="#D9E7E3" stroke-width="2"/>
+  <text x="35" y="46" fill="#24383A" font-family="Arial, sans-serif" font-size="23" font-weight="700">Uma peça, quatro grupos de faces</text>
+  <text x="35" y="73" fill="#657678" font-family="Arial, sans-serif" font-size="14">Faces da mesma forma e tamanho recebem a mesma cor.</text>
+
+  <ellipse cx="250" cy="496" rx="158" ry="18" fill="#DCE8E5" opacity=".7"/>
+
+  <!-- Prisma hexagonal: três dos seis retângulos laterais são visíveis nesta perspectiva. -->
+  <g fill="#18A558" stroke="#173B3E" stroke-width="2.5" stroke-linejoin="round">
+    <polygon points="180,321 110,260 110,420 180,481"/>
+    <polygon points="180,321 320,321 320,481 180,481"/>
+    <polygon points="320,321 390,260 390,420 320,481"/>
+  </g>
+
+  <!-- Tronco de pirâmide hexagonal: os trapézios congruentes têm uma só cor. -->
+  <g fill="#EF3B39" stroke="#173B3E" stroke-width="2.5" stroke-linejoin="round">
+    <polygon points="210,165 170,130 110,260 180,321"/>
+    <polygon points="210,165 290,165 320,321 180,321"/>
+    <polygon points="290,165 330,130 390,260 320,321"/>
+  </g>
+
+  <!-- Hexágono menor no topo. -->
+  <polygon points="330,130 290,165 210,165 170,130 210,95 290,95" fill="#FFD633" stroke="#173B3E" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <text x="250" y="135" text-anchor="middle" fill="#3D3821" font-family="Arial, sans-serif" font-size="13" font-weight="700">topo menor</text>
+
+  <line x1="448" y1="96" x2="448" y2="510" stroke="#DCE7E4" stroke-width="2"/>
+  <text x="485" y="124" fill="#24383A" font-family="Arial, sans-serif" font-size="19" font-weight="700">Uma cor para cada grupo</text>
+
+  <g font-family="Arial, sans-serif" font-size="16" fill="#24383A">
+    <rect x="486" y="149" width="26" height="26" rx="5" fill="#EF3B39"/>
+    <text x="527" y="168"><tspan font-weight="700">6 trapézios iguais</tspan><tspan fill="#687679" font-size="13"> — lateral superior</tspan></text>
+
+    <rect x="486" y="199" width="26" height="26" rx="5" fill="#18A558"/>
+    <text x="527" y="218"><tspan font-weight="700">6 retângulos iguais</tspan><tspan fill="#687679" font-size="13"> — lateral inferior</tspan></text>
+
+    <rect x="486" y="249" width="26" height="26" rx="5" fill="#FFD633" stroke="#173B3E"/>
+    <text x="527" y="268"><tspan font-weight="700">1 hexágono menor</tspan><tspan fill="#687679" font-size="13"> — topo</tspan></text>
+
+    <rect x="486" y="299" width="26" height="26" rx="5" fill="#147BDE"/>
+    <text x="527" y="318"><tspan font-weight="700">1 hexágono maior</tspan><tspan fill="#687679" font-size="13"> — base inferior</tspan></text>
+  </g>
+
+  <line x1="486" y1="345" x2="873" y2="345" stroke="#DCE7E4" stroke-width="2"/>
+  <text x="486" y="375" fill="#687679" font-family="Arial, sans-serif" font-size="14" font-weight="700">Vista por baixo: a base que não aparece acima</text>
+  <polygon points="765,424 724,457 642,457 601,424 642,391 724,391" fill="#147BDE" stroke="#173B3E" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="683" y="429" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14" font-weight="700">base inferior</text>
+
+  <rect x="486" y="491" width="388" height="40" rx="8" fill="#EAF4F2"/>
+  <text x="502" y="516" fill="#205D5D" font-family="Arial, sans-serif" font-size="13" font-weight="700">A face de contato entre os sólidos fica interna.</text>
+
+</svg>

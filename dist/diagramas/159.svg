@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 550" role="img" aria-labelledby="title desc">
+  <title id="title">Pistas para montar a função tangente</title>
+  <desc id="desc">Esquema sem escala vertical. Assíntotas verdes em T igual a (5 menos 2 pi) sobre 2 e T igual a (5 mais 2 pi) sobre 2. A distância entre elas é 2 pi. A curva laranja passa pelo ponto central (2,5; 30). Logo, D igual a 30 mais tangente de um meio vezes T menos 5 meios.</desc>
+  <rect width="860" height="550" fill="#FBFCFB"/>
+  <text x="30" y="40" fill="#24383A" font-family="Arial, sans-serif" font-size="24" font-weight="700">As duas pistas da tangente</text>
+  <text x="30" y="68" fill="#687679" font-family="Arial, sans-serif" font-size="15">O centro fixa os deslocamentos; a distância entre assíntotas fixa o período.</text>
+  <path d="M130 105 V400 M730 105 V400" fill="none" stroke="#1E907C" stroke-width="3" stroke-dasharray="8 6"/>
+  <path d="M90 400 H782" fill="none" stroke="#176DA8" stroke-width="2.5"/>
+  <path d="M772 394 L784 400 L772 406" fill="none" stroke="#176DA8" stroke-width="2.5"/>
+  <path d="M191 390 V112" fill="none" stroke="#176DA8" stroke-width="2.5"/>
+  <path d="M185 122 L191 110 L197 122" fill="none" stroke="#176DA8" stroke-width="2.5"/>
+  <text x="171" y="103" fill="#176DA8" font-family="Arial, sans-serif" font-size="17" font-weight="700">D</text>
+  <text x="792" y="406" fill="#176DA8" font-family="Arial, sans-serif" font-size="17" font-weight="700">T</text>
+  <path d="M167 386 C184 327 220 305 260 290 C335 274 384 264 430 255 C487 244 549 231 600 212 C648 193 680 160 693 124" fill="none" stroke="#F06423" stroke-width="5" stroke-linecap="round"/>
+  <path d="M191 255 H430 M430 255 V400" fill="none" stroke="#176DA8" stroke-width="2" stroke-dasharray="5 6"/>
+  <circle cx="430" cy="255" r="8" fill="#F06423" stroke="#fff" stroke-width="3"/>
+  <text x="448" y="249" fill="#A84A22" font-family="Arial, sans-serif" font-size="17" font-weight="700">(2,5; 30)</text>
+  <text x="156" y="248" fill="#176DA8" font-family="Arial, sans-serif" font-size="15" font-weight="700">30</text>
+  <g fill="#51666A" font-family="Arial, sans-serif" font-size="15" text-anchor="middle">
+    <text x="191" y="423">0</text><text x="430" y="423">2,5</text><text x="573" y="423">4</text>
+  </g>
+  <g fill="#137262" font-family="Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">
+    <text x="135" y="454">(5 − 2π)/2</text><text x="725" y="454">(5 + 2π)/2</text>
+  </g>
+  <path d="M144 473 H716" stroke="#176DA8" stroke-width="2"/>
+  <path d="M144 467 L130 473 L144 479 M716 467 L730 473 L716 479" fill="none" stroke="#176DA8" stroke-width="2"/>
+  <text x="430" y="467" fill="#176DA8" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">largura = 2π</text>
+  <text x="430" y="520" fill="#24383A" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">D = 30 + tg[(1/2)(T − 5/2)]</text>
+  <text x="31" y="542" fill="#687679" font-family="Arial, sans-serif" font-size="12">Esquema dos parâmetros; a altura da curva foi desenhada sem escala.</text>
+</svg>

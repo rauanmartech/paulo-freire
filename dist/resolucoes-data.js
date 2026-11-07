@@ -238,7 +238,7 @@ window.RESOLUCOES = {
   },
   144: {
     title: 'Mova o cubo, uma casa por vez',
-    intro: 'O cubo começa na casa (5, 1, 6). Gire o espaço com o mouse e use os controles para acompanhar cada deslocamento. As marcas nos planos mostram as três projeções ortogonais.',
+    intro: 'O cubo começa na casa (5, 1, 6). Gire o espaço com o mouse ou com o dedo e use os controles para acompanhar cada deslocamento. As marcas nos planos mostram as três projeções ortogonais.',
     diagram: { interactiveGrid: true },
     steps: [
       {

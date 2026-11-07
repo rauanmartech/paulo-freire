@@ -1,0 +1,113 @@
+/* Mantém as correções utilizáveis em telas estreitas sem encolher os desenhos até perderem a leitura. */
+.resolution, .step-content { min-width: 0; }
+.table-scroll { max-width: 100%; overflow-x: auto; overscroll-behavior-inline: contain; }
+.table-scroll:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.diagram-toolbar { display: none; }
+.diagram-pan-hint { display: none; }
+body.diagram-open { overflow: hidden; }
+
+.solid-diagram.diagram-expanded {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: #fff;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.diagram-expanded .diagram-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.diagram-expanded .diagram-pan-hint {
+  display: block;
+  flex-basis: 100%;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+}
+.diagram-expanded .solid-stage canvas,
+.diagram-expanded .grid-stage canvas,
+.diagram-expanded .cupola-stage canvas {
+  max-width: 800px;
+  margin-inline: auto;
+}
+.diagram-expanded > img {
+  width: max(100%, 680px);
+  max-width: none;
+  height: auto;
+}
+
+@media (max-width: 920px) {
+  .workspace { display: flex; flex-direction: column; }
+  .navigator { position: static; width: 100%; }
+  .question-panel { width: 100%; }
+  .question-grid { grid-template-columns: repeat(auto-fit, minmax(44px, 1fr)); max-height: 180px; }
+  .diagram-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 9px 11px;
+    background: #edf5f1;
+    border-bottom: 1px solid var(--line);
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .diagram-expand {
+    min-height: 44px;
+    padding: 6px 10px;
+    border: 1px solid var(--blue);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .diagram-expand:hover { background: #f7fbfa; }
+}
+
+@media (max-width: 600px) {
+  .shell { padding: 12px; }
+  .question-panel { padding: 13px; }
+  .answer-area { padding: 10px; }
+  .resolution { padding: 12px; margin-inline: -3px; overflow-wrap: anywhere; }
+  .resolution-steps li { grid-template-columns: 24px minmax(0, 1fr); gap: 7px; }
+  .step-content .equation { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+  .table-scroll { margin: 12px 0; }
+  .table-scroll .proportion-table:not(.cost-table) {
+    width: max-content;
+    min-width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+  .table-scroll .cost-table { width: 100%; min-width: 0; margin: 0; }
+  .solid-diagram { max-width: 100%; }
+  .solid-diagram .diagram-toolbar { margin: 0; }
+  .diagram-expanded .solid-stage,
+  .diagram-expanded .grid-stage,
+  .diagram-expanded .cupola-stage,
+  .diagram-expanded .street-stage { width: 100%; }
+  .image-modal { padding: 57px 12px 24px; text-align: left; }
+  .image-modal img { width: max(100%, 720px); max-width: none; }
+}
+
+@media (max-width: 360px) {
+  .question-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .diagram-toolbar { align-items: flex-start; }
+  .diagram-expand { width: 100%; }
+}

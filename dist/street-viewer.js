@@ -24,6 +24,12 @@
     'Oeste: chegou ao 2º quarteirão, no canto da casa A. A partida foi em P.'
   ];
   const colors = { west: '#F06423', north: '#147BDE' };
+  let activeSvg = null;
+  let activeObserver = null;
+  function updateViewport() {
+    if (activeSvg?.isConnected) activeSvg.setAttribute('viewBox', window.innerWidth <= 600 ? '0 0 520 620' : '0 0 860 620');
+  }
+  window.addEventListener('resize', updateViewport);
 
   function element(tag, className, text) {
     const item = document.createElement(tag);
@@ -45,9 +51,10 @@
     const figure = element('figure', 'solid-diagram street-interactive');
     const stage = element('div', 'street-stage');
     const svg = svgElement('svg', {
-      viewBox: '0 0 860 620', role: 'img',
+      viewBox: window.innerWidth <= 600 ? '0 0 520 620' : '0 0 860 620', role: 'img',
       'aria-label': 'Mapa animado da questão 160. A rota sai do canto nordeste do quarteirão P, segue para oeste, depois três quarteirões ao norte e dois ao oeste até a casa A.'
     });
+    activeSvg = svg;
     svg.append(label(30, 39, 'Siga as ruas até a casa A', { fill: '#24383A', 'font-size': 24, 'font-weight': 700 }));
     svg.append(label(30, 61, 'Cada quadrado cinza é um quarteirão; o ponto laranja é João.', { fill: '#627477', 'font-size': 15 }));
 
@@ -139,6 +146,12 @@
     controls.append(previous, play, next, reset);
     const caption = element('figcaption', '', 'A rota acompanha as viradas descritas no enunciado, uma esquina por vez.');
     figure.append(stage, readout, controls, caption);
+    activeObserver?.disconnect();
+    if (window.ResizeObserver) {
+      activeObserver = new ResizeObserver(updateViewport);
+      activeObserver.observe(figure);
+    }
+    requestAnimationFrame(updateViewport);
 
     let index = 0;
     let playing = false;

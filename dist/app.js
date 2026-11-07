@@ -18,6 +18,8 @@
   if (!byNumber.has(current)) current = 136;
   let filter = 'all';
   let difficultyFilter = '';
+  let expandedDiagram = null;
+  let expandReturnFocus = null;
 
   const $ = id => document.getElementById(id);
   const save = () => { try { localStorage.setItem(storageKey, JSON.stringify(progress)); } catch {} };
@@ -166,6 +168,7 @@
   }
 
   function renderResolution(question, state) {
+    closeExpandedDiagram(false);
     const container = $('resolution');
     const resolution = resolutions[question.number];
     container.replaceChildren();
@@ -274,7 +277,12 @@
           });
           table.append(line);
         });
-        content.append(table);
+        const frame = document.createElement('div');
+        frame.className = 'table-scroll';
+        frame.tabIndex = 0;
+        frame.setAttribute('aria-label', `Tabela: ${step.table.caption || 'dados da questão'}`);
+        frame.append(table);
+        content.append(frame);
       }
       if (step.proportion) {
         const table = document.createElement('table');
@@ -299,7 +307,12 @@
           }
           table.append(line);
         }
-        content.append(table);
+        const frame = document.createElement('div');
+        frame.className = 'table-scroll';
+        frame.tabIndex = 0;
+        frame.setAttribute('aria-label', 'Tabela: correspondência na mistura final');
+        frame.append(table);
+        content.append(frame);
       }
       for (const fraction of step.fractions || []) {
         const line = document.createElement('div');
@@ -370,7 +383,69 @@
       container.append(tip);
     }
     container.append(conclusion);
+    prepareResponsiveDiagrams(container);
   }
+
+  function closeExpandedDiagram(restoreFocus = true) {
+    if (!expandedDiagram) return;
+    expandedDiagram.classList.remove('diagram-expanded');
+    expandedDiagram.removeAttribute('role');
+    expandedDiagram.removeAttribute('aria-modal');
+    expandedDiagram.removeAttribute('aria-label');
+    document.body.classList.remove('diagram-open');
+    const button = expandedDiagram.querySelector('.diagram-expand');
+    if (button) button.textContent = 'Ampliar visualização';
+    expandedDiagram = null;
+    if (restoreFocus && expandReturnFocus?.isConnected) expandReturnFocus.focus();
+  }
+
+  function prepareResponsiveDiagrams(container) {
+    for (const figure of container.querySelectorAll('figure.solid-diagram')) {
+      const toolbar = document.createElement('div');
+      toolbar.className = 'diagram-toolbar';
+      const label = document.createElement('span');
+      label.textContent = figure.classList.contains('street-interactive') ? 'Mapa animado' :
+        figure.classList.contains('solid-interactive') || figure.classList.contains('grid-interactive') || figure.classList.contains('cupola-interactive') ?
+          'Modelo interativo' : 'Esquema da resolução';
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'diagram-expand';
+      button.textContent = 'Ampliar visualização';
+      button.setAttribute('aria-label', `Ampliar ${label.textContent.toLowerCase()}`);
+      button.addEventListener('click', () => {
+        if (expandedDiagram === figure) { closeExpandedDiagram(); return; }
+        closeExpandedDiagram(false);
+        expandReturnFocus = button;
+        expandedDiagram = figure;
+        figure.classList.add('diagram-expanded');
+        figure.setAttribute('role', 'dialog');
+        figure.setAttribute('aria-modal', 'true');
+        figure.setAttribute('aria-label', `Visualização ampliada: ${label.textContent}`);
+        document.body.classList.add('diagram-open');
+        button.textContent = 'Fechar visualização';
+        button.focus();
+      });
+      toolbar.append(label, button);
+      if (!figure.querySelector('canvas, svg')) {
+        const hint = document.createElement('span');
+        hint.className = 'diagram-pan-hint';
+        hint.textContent = 'Deslize para os lados para ler todo o desenho.';
+        toolbar.append(hint);
+      }
+      figure.prepend(toolbar);
+    }
+  }
+
+  document.addEventListener('keydown', event => {
+    if (!expandedDiagram) return;
+    if (event.key === 'Escape') { event.preventDefault(); closeExpandedDiagram(); return; }
+    if (event.key !== 'Tab') return;
+    const focusables = [...expandedDiagram.querySelectorAll('button:not([disabled]), a[href], [tabindex="0"]')];
+    if (!focusables.length) return;
+    const first = focusables[0], last = focusables[focusables.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
 
   function renderQuestion() {
     const question = byNumber.get(current);

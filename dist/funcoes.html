@@ -46,23 +46,24 @@
         <section class="graph-panel" aria-labelledby="function-title">
           <div class="graph-heading">
             <div><span id="function-family" class="lab-eyebrow">FUNÇÃO POLINOMIAL</span><h2 id="function-title">Função afim</h2><p id="function-summary">A reta muda de inclinação e de altura.</p></div>
-            <div class="equation-card"><span>REGRA ATUAL</span><strong id="function-equation" aria-live="off">f(x) = x + 1</strong></div>
+            <div class="equation-card"><span>FORMA GERAL</span><strong id="function-general">y = ax + b</strong></div>
           </div>
           <div class="graph-wrap">
             <canvas id="function-graph" tabindex="0" role="img" aria-label="Plano cartesiano interativo. Arraste para mover, use a roda do mouse ou os botões para ampliar. As setas do teclado movem o plano."></canvas>
-            <div class="graph-toolbar" aria-label="Controles do gráfico">
-              <button type="button" id="zoom-in" aria-label="Aproximar gráfico">+</button>
-              <button type="button" id="zoom-out" aria-label="Afastar gráfico">−</button>
-              <button type="button" id="reset-view">Centralizar</button>
+            <div class="current-rule"><span>REGRA ATUAL</span><strong id="function-equation" aria-live="off">f(x) = x + 1</strong></div>
+            <div id="parameter-dock" class="parameter-dock">
+              <div id="parameter-popover" class="parameter-popover" hidden>
+                <div class="popover-heading"><div><span>AJUSTE O COEFICIENTE</span><strong id="active-param-title">a · inclinação</strong></div><button id="close-parameter" type="button" aria-label="Fechar ajuste do coeficiente">×</button></div>
+                <input id="active-param-slider" class="parameter-slider" type="range" aria-label="Ajustar coeficiente">
+                <div class="popover-value"><label id="active-param-label" for="active-param-number">Valor de a</label><input id="active-param-number" class="parameter-number" type="number" inputmode="decimal"></div>
+                <div class="parameter-range"><span id="param-min">−5</span><span id="param-max">5</span></div>
+                <p id="control-note" class="control-note">Arraste ou digite um valor.</p>
+                <button id="reset-parameters" type="button" class="reset-parameters">Restaurar valores</button>
+              </div>
+              <div id="parameter-controls" class="parameter-controls" role="group" aria-label="Coeficientes da função"></div>
             </div>
           </div>
-          <div class="graph-footer"><span><i class="line-sample" aria-hidden="true"></i> <span id="graph-legend">f(x)</span></span><span id="point-readout" aria-live="off">Passe o mouse ou toque no gráfico para ler um ponto.</span><span id="graph-hint" class="graph-hint">Arraste para mover · role para ampliar</span></div>
-        </section>
-
-        <section class="control-panel" aria-labelledby="control-title">
-          <div class="control-heading"><div><span class="lab-eyebrow">EXPERIMENTE</span><h2 id="control-title">Mude os valores</h2></div><button type="button" id="reset-parameters">Restaurar valores</button></div>
-          <div id="parameter-controls" class="parameter-controls"></div>
-          <p id="control-note" class="control-note">O controle e o campo numérico representam o mesmo valor. Você pode usar qualquer um deles.</p>
+          <div class="graph-footer"><span><i class="line-sample" aria-hidden="true"></i> <span id="graph-legend">f(x)</span></span><span id="point-readout" aria-live="off">Passe o mouse ou toque no gráfico para ler um ponto.</span><span id="graph-hint" class="graph-hint">Arraste para mover · role para ampliar</span><div class="graph-toolbar" aria-label="Controles do gráfico"><button type="button" id="zoom-in" aria-label="Aproximar gráfico">+</button><button type="button" id="zoom-out" aria-label="Afastar gráfico">−</button><button type="button" id="reset-view">Centralizar</button></div></div>
         </section>
 
         <section class="understand-panel" aria-labelledby="understand-title">

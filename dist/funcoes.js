@@ -116,6 +116,13 @@
     }
   ];
 
+  const generalForms = {
+    afim: 'y = ax + b', quadratica: 'y = ax² + bx + c', cubica: 'y = ax³ + bx² + cx + d',
+    modulo: 'y = a|x − h| + k', raiz: 'y = a√(x − h) + k', inversa: 'y = a/(x − h) + k',
+    exponencial: 'y = a·b^(x − h) + k', logaritmica: 'y = a·logᵦ(x − h) + k',
+    seno: 'y = a·sen(b(x − h)) + k', cosseno: 'y = a·cos(b(x − h)) + k',
+    tangente: 'y = a·tg(b(x − h)) + k', potencia: 'y = axⁿ + b'
+  };
   const byId = new Map(models.map(model => [model.id, model]));
   const values = new Map(models.map(model => [model.id, Object.fromEntries(model.params.map(p => [p.key, p.value]))]));
   const $ = id => document.getElementById(id);
@@ -123,12 +130,15 @@
   const ctx = canvas.getContext('2d');
   const view = { cx: 0, cy: 0, scale: 38 };
   let selected = byId.get(location.hash.slice(1)) || models[0];
+  let activeParameter = null;
   let hoverX = null;
   let drag = null;
   let frame = 0;
 
   function setModel(model, updateHash = true) {
     selected = model;
+    activeParameter = null;
+    $('parameter-popover').hidden = true;
     hoverX = null;
     view.cx = 0; view.cy = 0; view.scale = 38;
     if (updateHash) history.replaceState(null, '', `#${model.id}`);
@@ -140,8 +150,9 @@
     $('function-family').textContent = model.family;
     $('function-title').textContent = ['2º grau', '3º grau'].includes(model.label) ? `Função do ${model.label}` : `Função ${model.label.toLowerCase()}`;
     $('function-summary').textContent = model.summary;
+    $('function-general').textContent = generalForms[model.id];
     $('graph-hint').textContent = ['seno', 'cosseno', 'tangente'].includes(model.id) ? 'x em radianos · arraste para mover · role para ampliar' : 'Arraste para mover · role para ampliar';
-    $('control-note').textContent = ['exponencial', 'logaritmica'].includes(model.id) ? 'Arraste ou digite. A base b pode ser menor ou maior que 1, mas não pode ser igual a 1.' : 'O controle e o campo numérico representam o mesmo valor. Você pode usar qualquer um deles.';
+    $('control-note').textContent = ['exponencial', 'logaritmica'].includes(model.id) ? 'A base b pode ser menor ou maior que 1, mas não pode ser igual a 1.' : 'Arraste ou digite. O gráfico muda na mesma hora.';
     renderControls();
     updateDetails();
   }
@@ -151,54 +162,70 @@
     container.replaceChildren();
     const p = values.get(selected.id);
     for (const definition of selected.params) {
-      const card = document.createElement('div'); card.className = 'parameter-card';
-      const top = document.createElement('div'); top.className = 'parameter-top';
-      const label = document.createElement('label'); label.htmlFor = `number-${definition.key}`;
+      const button = document.createElement('button'); button.type = 'button'; button.className = 'parameter-button';
+      button.dataset.parameter = definition.key;
+      button.setAttribute('aria-controls', 'parameter-popover');
+      button.setAttribute('aria-expanded', String(activeParameter === definition.key));
+      button.setAttribute('aria-label', `Ajustar ${definition.label}: ${number(p[definition.key])}`);
       const symbol = document.createElement('b'); symbol.textContent = definition.key;
-      label.append(symbol, document.createTextNode(definition.label.slice(1).trim()));
-      const input = document.createElement('input'); input.className = 'parameter-number';
-      input.id = `number-${definition.key}`; input.type = 'number';
-      input.min = definition.min; input.max = definition.max; input.step = definition.key === 'n' ? 1 : 'any'; input.value = p[definition.key];
-      const range = document.createElement('input'); range.className = 'parameter-slider'; range.type = 'range';
-      range.min = definition.min; range.max = definition.max; range.step = definition.key === 'n' ? 1 : 'any'; range.value = p[definition.key];
-      range.setAttribute('aria-label', `${definition.key}, ${definition.label.slice(4)}, de ${number(definition.min)} a ${number(definition.max)}`);
-      range.addEventListener('input', () => {
-        let next = Number(range.value);
-        if (definition.key !== 'n') next = Math.round(next * 100) / 100;
-        if (definition.key === 'b' && ['exponencial', 'logaritmica'].includes(selected.id) && next === 1) next = p.b < 1 ? 1.1 : .9;
-        p[definition.key] = next;
-        range.value = next;
-        input.value = next;
-        input.removeAttribute('aria-invalid');
-        updateDetails();
-      });
-      input.addEventListener('input', () => {
-        const next = Number(input.value);
-        const forbiddenBase = definition.key === 'b' && ['exponencial', 'logaritmica'].includes(selected.id) && next === 1;
-        const forbiddenFraction = definition.key === 'n' && !Number.isInteger(next);
-        const valid = input.value !== '' && Number.isFinite(next) && next >= definition.min && next <= definition.max && !forbiddenBase && !forbiddenFraction;
-        if (!valid) { input.setAttribute('aria-invalid', 'true'); return; }
-        input.removeAttribute('aria-invalid');
-        p[definition.key] = next;
-        range.value = next;
-        updateDetails();
-      });
-      input.addEventListener('change', () => {
-        input.value = p[definition.key];
-        input.removeAttribute('aria-invalid');
-      });
-      top.append(label, input);
-      const bounds = document.createElement('div'); bounds.className = 'parameter-range';
-      const min = document.createElement('span'); min.textContent = number(definition.min);
-      const max = document.createElement('span'); max.textContent = number(definition.max);
-      bounds.append(min, max);
-      card.append(top, range, bounds); container.append(card);
+      const value = document.createElement('span'); value.textContent = number(p[definition.key]);
+      button.append(symbol, value);
+      button.addEventListener('click', () => activeParameter === definition.key ? closeParameter(true) : openParameter(definition.key, true));
+      container.append(button);
+    }
+  }
+
+  function openParameter(key, focusSlider = false) {
+    const definition = selected.params.find(item => item.key === key);
+    if (!definition) return;
+    activeParameter = key;
+    const p = values.get(selected.id);
+    const slider = $('active-param-slider');
+    const input = $('active-param-number');
+    $('active-param-title').textContent = definition.label;
+    $('active-param-label').textContent = `Valor de ${key}`;
+    $('param-min').textContent = number(definition.min);
+    $('param-max').textContent = number(definition.max);
+    slider.min = definition.min; slider.max = definition.max;
+    slider.step = key === 'n' ? 1 : 'any'; slider.value = p[key];
+    slider.setAttribute('aria-label', `${definition.label}, de ${number(definition.min)} a ${number(definition.max)}`);
+    input.min = definition.min; input.max = definition.max;
+    input.step = key === 'n' ? 1 : 'any'; input.value = p[key];
+    input.removeAttribute('aria-invalid');
+    $('parameter-popover').hidden = false;
+    for (const button of $('parameter-controls').querySelectorAll('button')) {
+      const active = button.dataset.parameter === key;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-expanded', String(active));
+    }
+    if (focusSlider) slider.focus();
+  }
+
+  function closeParameter(restoreFocus = false) {
+    const previous = activeParameter;
+    activeParameter = null;
+    $('parameter-popover').hidden = true;
+    for (const button of $('parameter-controls').querySelectorAll('button')) {
+      button.classList.remove('active');
+      button.setAttribute('aria-expanded', 'false');
+    }
+    if (restoreFocus && previous) $('parameter-controls').querySelector(`[data-parameter="${previous}"]`)?.focus();
+  }
+
+  function syncParameterButtons() {
+    const p = values.get(selected.id);
+    for (const button of $('parameter-controls').querySelectorAll('button')) {
+      const key = button.dataset.parameter;
+      const definition = selected.params.find(item => item.key === key);
+      button.querySelector('span').textContent = number(p[key]);
+      button.setAttribute('aria-label', `Ajustar ${definition.label}: ${number(p[key])}`);
     }
   }
 
   function updateDetails() {
     const p = values.get(selected.id);
     $('function-equation').textContent = selected.equation(p);
+    syncParameterButtons();
     $('function-explanation').textContent = selected.explain(p);
     $('graph-legend').textContent = selected.label === '2º grau' ? 'Parábola' : selected.label;
     const container = $('function-facts'); container.replaceChildren();
@@ -344,8 +371,48 @@
     $('function-list').append(button);
   }
   $('reset-parameters').addEventListener('click', () => {
+    const key = activeParameter;
     values.set(selected.id, Object.fromEntries(selected.params.map(p => [p.key, p.value])));
-    renderControls(); updateDetails();
+    renderControls();
+    if (key) openParameter(key);
+    updateDetails();
+  });
+  $('close-parameter').addEventListener('click', () => closeParameter(true));
+  $('active-param-slider').addEventListener('input', () => {
+    if (!activeParameter) return;
+    const key = activeParameter, p = values.get(selected.id);
+    let next = Number($('active-param-slider').value);
+    if (key !== 'n') next = Math.round(next * 100) / 100;
+    if (key === 'b' && ['exponencial', 'logaritmica'].includes(selected.id) && next === 1) next = p.b < 1 ? 1.1 : .9;
+    p[key] = next;
+    $('active-param-slider').value = next;
+    $('active-param-number').value = next;
+    $('active-param-number').removeAttribute('aria-invalid');
+    updateDetails();
+  });
+  $('active-param-number').addEventListener('input', () => {
+    if (!activeParameter) return;
+    const key = activeParameter, input = $('active-param-number');
+    const definition = selected.params.find(item => item.key === key);
+    const next = Number(input.value);
+    const forbiddenBase = key === 'b' && ['exponencial', 'logaritmica'].includes(selected.id) && next === 1;
+    const valid = input.value !== '' && Number.isFinite(next) && next >= definition.min && next <= definition.max && !forbiddenBase && (key !== 'n' || Number.isInteger(next));
+    if (!valid) { input.setAttribute('aria-invalid', 'true'); return; }
+    input.removeAttribute('aria-invalid');
+    values.get(selected.id)[key] = next;
+    $('active-param-slider').value = next;
+    updateDetails();
+  });
+  $('active-param-number').addEventListener('change', () => {
+    if (!activeParameter) return;
+    $('active-param-number').value = values.get(selected.id)[activeParameter];
+    $('active-param-number').removeAttribute('aria-invalid');
+  });
+  document.addEventListener('pointerdown', event => {
+    if (activeParameter && !event.target.closest('#parameter-dock')) closeParameter();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && activeParameter) { event.preventDefault(); closeParameter(true); }
   });
   $('zoom-in').addEventListener('click', () => zoom(1.25));
   $('zoom-out').addEventListener('click', () => zoom(1 / 1.25));

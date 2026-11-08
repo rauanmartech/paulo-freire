@@ -1,4 +1,8 @@
 /* Mantém as correções utilizáveis em telas estreitas sem encolher os desenhos até perderem a leitura. */
+.header-nav { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+.header-link { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 9px 15px; border: 1px solid transparent; border-radius: 9px; color: var(--blue); font-size: 12px; font-weight: 800; text-decoration: none; white-space: nowrap; }
+.header-link:hover, .header-link:focus-visible { border-color: var(--blue); outline-offset: 2px; }
+.header-link.active { background: var(--blue); color: #fff; }
 .resolution, .step-content { min-width: 0; }
 .table-scroll { max-width: 100%; overflow-x: auto; overscroll-behavior-inline: contain; }
 .table-scroll:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
@@ -82,6 +86,9 @@ body.diagram-open { overflow: hidden; }
 }
 
 @media (max-width: 600px) {
+  .header-inner { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .header-nav { width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .header-link { min-height: 42px; padding: 8px 6px; font-size: 11px; }
   .shell { padding: 12px; }
   .question-panel { padding: 13px; }
   .answer-area { padding: 10px; }

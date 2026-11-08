@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F25F29">
+  <meta name="description" content="Explore funções do ensino médio mudando seus parâmetros e observando o gráfico em tempo real.">
+  <title>Entenda Funções | Cursinho Popular Paulo Freire</title>
+  <link rel="icon" type="image/png" href="logo-fundo-transparente.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="funcoes.css">
+</head>
+<body>
+  <a class="skip-link" href="#laboratorio">Ir para o laboratório</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="logo-fundo-transparente.png" alt="Logo do Cursinho Popular Paulo Freire" width="64" height="64">
+        <div><strong>Cursinho Popular<br>Paulo Freire</strong><span>Estude no seu ritmo</span></div>
+      </div>
+      <nav class="header-nav" aria-label="Seções da plataforma">
+        <a class="header-link" href="index.html">Caderno de Questões</a>
+        <a class="header-link active" href="funcoes.html" aria-current="page">Entenda Funções</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="functions-shell" id="laboratorio">
+    <section class="functions-hero" aria-labelledby="functions-title">
+      <div>
+        <span class="hero-kicker">LABORATÓRIO INTERATIVO · MATEMÁTICA</span>
+        <h1 id="functions-title">Entenda funções <em>vendo a mudança acontecer.</em></h1>
+        <p>Escolha uma família de funções, arraste os controles ou digite os coeficientes. O desenho e a leitura matemática mudam na mesma hora.</p>
+      </div>
+      <div class="hero-mark" aria-hidden="true"><span>y</span><i></i><b>x</b></div>
+    </section>
+
+    <div class="lab-layout">
+      <aside class="function-catalog" aria-labelledby="catalog-title">
+        <div class="catalog-heading"><span class="lab-eyebrow">ESCOLHA UMA FUNÇÃO</span><h2 id="catalog-title">Famílias</h2></div>
+        <div id="function-list" class="function-list" role="group" aria-label="Tipos de função"></div>
+      </aside>
+
+      <div class="lab-main">
+        <section class="graph-panel" aria-labelledby="function-title">
+          <div class="graph-heading">
+            <div><span id="function-family" class="lab-eyebrow">FUNÇÃO POLINOMIAL</span><h2 id="function-title">Função afim</h2><p id="function-summary">A reta muda de inclinação e de altura.</p></div>
+            <div class="equation-card"><span>REGRA ATUAL</span><strong id="function-equation" aria-live="off">f(x) = x + 1</strong></div>
+          </div>
+          <div class="graph-wrap">
+            <canvas id="function-graph" tabindex="0" role="img" aria-label="Plano cartesiano interativo. Arraste para mover, use a roda do mouse ou os botões para ampliar. As setas do teclado movem o plano."></canvas>
+            <div class="graph-toolbar" aria-label="Controles do gráfico">
+              <button type="button" id="zoom-in" aria-label="Aproximar gráfico">+</button>
+              <button type="button" id="zoom-out" aria-label="Afastar gráfico">−</button>
+              <button type="button" id="reset-view">Centralizar</button>
+            </div>
+          </div>
+          <div class="graph-footer"><span><i class="line-sample" aria-hidden="true"></i> <span id="graph-legend">f(x)</span></span><span id="point-readout" aria-live="off">Passe o mouse ou toque no gráfico para ler um ponto.</span><span id="graph-hint" class="graph-hint">Arraste para mover · role para ampliar</span></div>
+        </section>
+
+        <section class="control-panel" aria-labelledby="control-title">
+          <div class="control-heading"><div><span class="lab-eyebrow">EXPERIMENTE</span><h2 id="control-title">Mude os valores</h2></div><button type="button" id="reset-parameters">Restaurar valores</button></div>
+          <div id="parameter-controls" class="parameter-controls"></div>
+          <p id="control-note" class="control-note">O controle e o campo numérico representam o mesmo valor. Você pode usar qualquer um deles.</p>
+        </section>
+
+        <section class="understand-panel" aria-labelledby="understand-title">
+          <div><span class="lab-eyebrow">O QUE OBSERVAR</span><h2 id="understand-title">Leia o gráfico</h2><p id="function-explanation"></p></div>
+          <div id="function-facts" class="function-facts"></div>
+        </section>
+      </div>
+    </div>
+    <footer class="site-footer"><span>Explore, compare e teste suas hipóteses: os controles são um espaço de estudo.</span><span>Os desenhos são modelos matemáticos, com escala ajustável.</span></footer>
+  </main>
+  <script src="funcoes.js"></script>
+</body>
+</html>

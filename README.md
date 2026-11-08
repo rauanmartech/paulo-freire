@@ -2,7 +2,7 @@
 
 Plataforma estática com as questões 136 a 180 do caderno 5 (amarelo), 2º dia do ENEM 2025. A questão 178 consta como anulada no gabarito fornecido.
 
-O header leva ao **Caderno de Questões** e à página **Entenda Funções**. O laboratório de funções apresenta 12 famílias: afim, 2º grau, 3º grau, módulo, raiz quadrada, racional, exponencial, logarítmica, seno, cosseno, tangente e potência. A forma geral aparece no cabeçalho; a regra com os valores escolhidos aparece sobre o gráfico. Os botões dos coeficientes ficam no canto inferior direito do plano e abrem um ajuste compacto por barra ou campo numérico, com atualização imediata do gráfico e da leitura matemática. O plano cartesiano aceita arraste, zoom e teclado.
+O header leva ao **Caderno de Questões** e à página **Entenda Funções**. O laboratório de funções apresenta 12 famílias: afim, 2º grau, 3º grau, módulo, raiz quadrada, racional, exponencial, logarítmica, seno, cosseno, tangente e potência. A forma geral aparece no cabeçalho; a regra com os valores escolhidos aparece sobre o gráfico. Os botões dos coeficientes ficam no canto inferior direito do plano e abrem um ajuste compacto por barra ou campo numérico, com atualização imediata do gráfico e da leitura matemática. Em telas pequenas, as famílias aparecem em grade, o gráfico ganha espaço vertical e o toque horizontal move o plano sem impedir a rolagem vertical da página. O plano também aceita zoom e teclado.
 
 Todas as 45 questões têm explicação na plataforma. As 44 questões válidas têm resolução comentada; a questão 178 traz a situação de anulação no gabarito e uma análise algébrica para estudo. As questões 159 e 175 incluem esquemas visuais da função tangente e das tortas cilíndricas.
 

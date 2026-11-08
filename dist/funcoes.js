@@ -135,6 +135,13 @@
   let drag = null;
   let frame = 0;
 
+  function updateGraphHint() {
+    const radians = ['seno', 'cosseno', 'tangente'].includes(selected.id) ? 'x em radianos · ' : '';
+    $('graph-hint').textContent = window.innerWidth <= 760
+      ? `${radians}Deslize na horizontal para mover · use + e − para ampliar`
+      : `${radians}Arraste para mover · role para ampliar`;
+  }
+
   function setModel(model, updateHash = true) {
     selected = model;
     activeParameter = null;
@@ -151,7 +158,7 @@
     $('function-title').textContent = ['2º grau', '3º grau'].includes(model.label) ? `Função do ${model.label}` : `Função ${model.label.toLowerCase()}`;
     $('function-summary').textContent = model.summary;
     $('function-general').textContent = generalForms[model.id];
-    $('graph-hint').textContent = ['seno', 'cosseno', 'tangente'].includes(model.id) ? 'x em radianos · arraste para mover · role para ampliar' : 'Arraste para mover · role para ampliar';
+    updateGraphHint();
     $('control-note').textContent = ['exponencial', 'logaritmica'].includes(model.id) ? 'A base b pode ser menor ou maior que 1, mas não pode ser igual a 1.' : 'Arraste ou digite. O gráfico muda na mesma hora.';
     renderControls();
     updateDetails();
@@ -448,6 +455,7 @@
     event.preventDefault(); scheduleDraw();
   });
   window.addEventListener('hashchange', () => { const model = byId.get(location.hash.slice(1)); if (model && model !== selected) setModel(model, false); });
+  window.addEventListener('resize', updateGraphHint);
   if (window.ResizeObserver) new ResizeObserver(scheduleDraw).observe(canvas);
   else window.addEventListener('resize', scheduleDraw);
   setModel(selected, false);
